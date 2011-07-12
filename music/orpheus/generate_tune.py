@@ -44,16 +44,24 @@ def gen_triplet(l):
                 sorted_list.insert(0, min(sorted_list) - 2)
     elif len(sorted_list) == 1:
         p = sorted_list[0]
-        sorted_list.insert(0, p - 2)
-        sorted_list.append(p + 2)
-    elif len(sorted_list) == 0:
-        sorted_list.extend([999, 999, 999])
+        if p < 63:
+            sorted_list.append(p + 2)
+            sorted_list.append(p + 4)
+        elif p < 69:
+            sorted_list.insert(0, p - 2)
+            sorted_list.append(p + 2)
+        else:
+            sorted_list.insert(0, p - 2)
+            sorted_list.insert(0, p - 4)
     return sorted_list
 
 
 def print_js(triplets):
     for tpl in triplets:
-        tmp = tpl[:]
+        if tpl:
+            tmp = tpl[:]
+        else:
+            tmp = [Z, Z, Z]
         tmp.append(Z)
         print "\t%s," % tmp
 

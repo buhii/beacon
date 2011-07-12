@@ -82,9 +82,9 @@ function setFlag(x)
 
 function list(a)
 {
-	cmt = arguments[0];		// Chikai Man-naka Tooi
+	cmt = arguments[0];		// Chikai Man-naka Toi :-)
 	num = arguments[1];		// tick
-	ac  = tune[tune_mode][num][3];	// accompaniment /w flag
+	ac  = tune[tune_mode][num][3];	// accompaniment with flag
 
 	// output Off
 	if (num == (tune[tune_mode].length - 1) ) { setFlag(TUNEEND); }
@@ -109,7 +109,7 @@ function list(a)
 		flag_con = true;
 	} else {
 		if (flag_con == true)
-		{	
+		{
 			if (tune[tune_mode][num][cmt] != 999) {
 				now_note = tune[tune_mode][num][cmt];
 				outlet(0, [now_note, 127]);	// note on
@@ -121,6 +121,6 @@ function list(a)
 
 function msg_int(x)
 {
-	if (x == 1) { post("Mario\n");	  tune_mode = 1; old_num = 999; return; }
-	if (x == 3) { post("GameOver\n"); tune_mode = 0; old_num = 999; return; }
+	if (x == 1) { post("Tune\n"); tune_mode = 1; old_num = 999; return; }
+	if (x == 3) { post("Void\n"); tune_mode = 0; old_num = 999; return; }
 }

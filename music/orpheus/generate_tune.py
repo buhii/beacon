@@ -58,7 +58,7 @@ def print_js(triplets):
     for tpl in triplets:
         tmp = tpl[:]
         tmp.append(Z)
-        for i in range(4):
+        for i in range(8):
             print "\t%s," % tmp
 
 

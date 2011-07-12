@@ -12,7 +12,7 @@ melody = """
 74  Z 62  Z | 64  Z 66  Z | 69 67 73 71 | 69 79 78 76
 74  Z 62  Z | 64  Z 66  Z | 69 67 73 71 | 69 79 78 76
 
-74  Z  Z  Z | 74  Z  Z  Z | 74  Z  Z  Z | 74  Z  Z  Z
+74  Z  Z  Z | 78  Z  Z  Z | 74  Z  Z  Z | 78  Z  Z  Z
 74  Z  Z  Z | Z   Z  Z  Z | 62  Z  Z  Z 
 """
 

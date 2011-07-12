@@ -27,14 +27,14 @@ def drawMap(x, y, div, pnum):
     translate(x,y)
     # --- division line
     for i in range(int(div)):
-        theta = 2 * math.pi * i / div
+        theta = 2 * math.pi * i/ div
         if (i % tstep == 0):
             if (i == 0):
                 stroke(1,0,0)
             else:
                 stroke(0.5,0.5,0.5)
         else:
-            stroke(0.8,0.8,0.8)
+            stroke(0.85,0.85,0.85)
         line(0, 0, math.cos(theta) * d_max, math.sin(theta) * d_max)
     # --- map
     stroke(0,0,0)
@@ -74,7 +74,7 @@ def drawTune(x, y, who, nmin, nmax):
                 if s != -1:
                     count+=1
                     if (nmin <= (i + j)) and ((i + j) <= nmax):
-                        theta = ((i + j) /numLED) * 2 * math.pi + 0.13
+                        theta = ((i + j) /numLED) * 2 * math.pi
                         drawBall(x + math.cos(theta) * s, 
                                  y + math.sin(theta) * s, count, who)
 

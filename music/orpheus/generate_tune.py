@@ -57,9 +57,17 @@ def print_js(triplets):
             print "\t%s," % tmp
 
 
-def print_map(melody, l):
-    print "tune = %s" % repr(l)
-
+def print_map(melody, triplets):
+    tune = ""
+    for i, melody_fragment in enumerate(div_bar(melody)):
+        for c in melody_fragment:
+            if c in triplets[i]:
+                tune += str(triplets[i].index(c) + 1)
+            else:
+                tune += '-'
+            tune += '-'
+    print "tune = \"%s\"" % tune
+    
 
 
 if __name__ == '__main__':

@@ -9,13 +9,7 @@ tstep = 2
 cary=[[0.3,0.7,0.1],[0.7,0.3,0.1],[0.3,0.1,0.7], [0.7,0.7,0.3]]
 numPlayer = 4
 
-tune = """
-4---4--46-6-6-2-3-4-3-2-3-4-3-2-
-4---4--43-3-4-5-2---3---4---2---
-4---4--46-6-6-2-3-4-3-2-3-4-3-2-
-0---------1-2-3-3---2-2---------
-33-33-33-33-3---33-33-33-33-3---
-""".replace("\n", "")
+tune = "1-2-2-3-2-1-1-3-1-2-3-2-3-1-1---3-1-1-3-3-1-1-2-3-1-3-1-3-1-3-1-1-2-2-3-2-1-1-3-1-2-3-2-3-1-1---3-1-1-3-3-1-1-2-3-1-3-1-3-1-1---"
 
 def circle(xz, yz, sz):
     return oval(xz - sz, yz - sz, sz * 2, sz * 2)
@@ -59,27 +53,11 @@ def drawMap(x, y, div, pnum):
     translate(-x,-y)
 
 def getNum(str):
-    # 20, 60, 100, 140
-    #   40   80  120 
-    if   str == 't':    # 2
+    if str == '3':
         return 120
-    elif str == 'm':    # 1
+    elif str == '2':
         return 80
-    elif str == 'c':    # 0
-        return 40
-    elif str == '6':    # 2
-        return 120
-    elif str == '5':    # 2
-        return 120
-    elif str == '4':    # 1
-        return 80
-    elif str == '3':    # 1
-        return 80
-    elif str == '2':    # 0
-        return 40
-    elif str == '1':    # 0
-        return 40
-    elif str == '0':    # 0
+    elif str == '1':
         return 40
     else:
         return -1

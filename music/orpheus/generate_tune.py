@@ -40,12 +40,17 @@ def gen_triplet(l):
     if len(sorted_list) > 3:
         raise TripletError("over 3!", l)
     elif len(sorted_list) == 2:
-        center = (min(sorted_list) + max(sorted_list)) / 2
-        sorted_list.insert(1, center)
+        if (max(sorted_list) - min(sorted_list)) > 5:
+            # very far
+            center = (min(sorted_list) + max(sorted_list)) / 2
+            sorted_list.insert(1, center)
+        else:
+            sorted_list.append(max(sorted_list) + 2)
+            
     elif len(sorted_list) == 1:
         p = sorted_list[0]
-        sorted_list.insert(0, p - 1)
-        sorted_list.append(p + 1)
+        sorted_list.insert(0, p - 2)
+        sorted_list.append(p + 2)
     return sorted_list
 
 
